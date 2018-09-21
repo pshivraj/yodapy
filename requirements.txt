@@ -1,6 +1,11 @@
 requests
+pandas
 xarray
-geopandas
-seaborn
-rasterio
+matplotlib
 lxml
+grequests
+gevent
+siphon
+dask
+netCDF4
+progressbar2

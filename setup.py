@@ -6,6 +6,8 @@ from __future__ import (absolute_import,
 import os
 from codecs import open
 
+import versioneer
+
 from setuptools import find_packages, setup
 
 here = os.path.abspath(os.path.dirname(__file__))
@@ -20,17 +22,20 @@ with open(os.path.join(here, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='yodapy',
-    version='0.1-alpha',
+    version=versioneer.get_version(),
+    cmdclass=versioneer.get_cmdclass(),
     description='Your Ocean Data Access in Python',
     long_description=long_description,
+    long_description_content_type='text/markdown',
     url='',
     author='Landung Setiawan',
     author_email='landungs@uw.edu',
     maintainer='Landung Setiawan',
     maintainer_email='landungs@uw.edu',
+    python_requires='>=3',
     license='BSD',
     classifiers=[
-        'Development Status :: 1 - Alpha',
+        'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
         'Topic :: Software Development :: Build Tools',
         'License :: OSI Approved :: BSD License',
@@ -40,6 +45,7 @@ setup(
         'Topic :: Scientific/Engineering'
     ],
     keywords=['Ocean', 'Data', 'Access', 'OOI'],
+    include_package_data=True,
     packages=find_packages(),
     install_requires=install_requires,
 )
